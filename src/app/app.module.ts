@@ -1,6 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {RouterModule} from '@angular/router';
+import {AppRoutingModule} from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentsModulesModule } from './components/components-modules.module';
 import { PrimeNGModulesModule } from './prime-ngmodules/prime-ngmodules.module';
@@ -18,7 +18,7 @@ import { HomeComponent } from './pages/home/home.component';
     BrowserModule,
     BrowserAnimationsModule,
     ComponentsModulesModule,
-    RouterModule,
+    AppRoutingModule,
     PrimeNGModulesModule
   ],
   declarations: [ AppComponent, NavbarComponent, FooterComponent, HeaderComponent, HomeComponent ],
