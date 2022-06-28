@@ -2,18 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BarraMenuComponent } from './barra-menu/barra-menu.component';
 import { PrimeNGModulesModule } from '../prime-ngmodules/prime-ngmodules.module';
-
+import { ParallaxComponent } from './parallax/parallax.component';
 
 @NgModule({
   declarations: [
-    BarraMenuComponent
+    BarraMenuComponent,
+    ParallaxComponent
   ],
   exports: [
-    BarraMenuComponent
+    BarraMenuComponent,
+    ParallaxComponent
   ],
   imports: [
     CommonModule,
-    PrimeNGModulesModule
+    PrimeNGModulesModule,
   ]
 })
 export class ComponentsModulesModule { }

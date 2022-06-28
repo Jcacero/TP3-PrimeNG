@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentsModulesModule } from './components/components-modules.module';
 import { PrimeNGModulesModule } from './prime-ngmodules/prime-ngmodules.module';
 
-
+//paginas
 import { AppComponent }   from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -18,6 +18,7 @@ import { HomeComponent } from './pages/home/home.component';
     BrowserModule,
     BrowserAnimationsModule,
     ComponentsModulesModule,
+    RouterModule,
     PrimeNGModulesModule
   ],
   declarations: [ AppComponent, NavbarComponent, FooterComponent, HeaderComponent, HomeComponent ],
