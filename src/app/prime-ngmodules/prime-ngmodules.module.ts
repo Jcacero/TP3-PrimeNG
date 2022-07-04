@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 // Import PrimeNG modules
 import {MegaMenuModule} from 'primeng/megamenu';
 import {TabViewModule} from 'primeng/tabview';
-
+import {CarouselModule} from 'primeng/carousel';
 
 
 
@@ -14,11 +14,13 @@ import {TabViewModule} from 'primeng/tabview';
   imports: [
     CommonModule, 
     MegaMenuModule,
-    TabViewModule
+    TabViewModule,
+    CarouselModule
   ],
   exports: [
     MegaMenuModule,
-    TabViewModule
+    TabViewModule,
+    CarouselModule
   ]
 })
 export class PrimeNGModulesModule { }
