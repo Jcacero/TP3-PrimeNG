@@ -18,6 +18,10 @@ export class BarraMenuComponent implements OnInit {
           routerLink:"home"
         },
         {
+            label: 'Admin', icon: 'pi pi-users-plus',
+            visible:false
+        },
+        {
             label: 'Users', icon: 'pi pi-fw pi-users',
             items: [
                 [

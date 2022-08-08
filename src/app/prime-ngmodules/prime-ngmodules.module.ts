@@ -5,12 +5,8 @@ import { CommonModule } from '@angular/common';
 import {MegaMenuModule} from 'primeng/megamenu';
 import {TabViewModule} from 'primeng/tabview';
 import {CarouselModule} from 'primeng/carousel';
-<<<<<<< HEAD
+import {ButtonModule} from 'primeng/button';
 import {CardModule} from 'primeng/card';
-=======
-import {GalleriaModule} from 'primeng/galleria';
-
->>>>>>> bbacc10229e737459c354c430849e68b6247bf66
 
 
 
@@ -21,21 +17,15 @@ import {GalleriaModule} from 'primeng/galleria';
     MegaMenuModule,
     TabViewModule,
     CarouselModule,
-<<<<<<< HEAD
-    CardModule
-=======
-    GalleriaModule
->>>>>>> bbacc10229e737459c354c430849e68b6247bf66
+    CardModule,
+    ButtonModule
   ],
   exports: [
     MegaMenuModule,
     TabViewModule,
     CarouselModule,
-<<<<<<< HEAD
-    CardModule
-=======
-    GalleriaModule
->>>>>>> bbacc10229e737459c354c430849e68b6247bf66
+    CardModule,
+    ButtonModule
   ]
 })
 export class PrimeNGModulesModule { }

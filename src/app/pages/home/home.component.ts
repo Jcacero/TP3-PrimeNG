@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertaService } from 'src/app/servicios/alerta.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private miServicio:AlertaService) { }
 
   ngOnInit(): void {
+  }
+
+  lanzarDialogo(){
+    this.miServicio.mostrarAlerta("HOLA PROFEEE")
   }
 
 }
