@@ -1,2 +1,9 @@
-<app-barra-menu></app-barra-menu>
-<p-button label="Click 2" (onClick)="mostrar()"></p-button>
+<h1>Usuarios administradores</h1>
+
+<div *ngFor="let user of usuarios">
+    <p>Nombre de usuario: <b>{{this.user.nombreUsuario}}</b></p>
+    <p>Contraseña: <b>{{this.user.contrasena}}</b></p>
+    <p>------------------------------</p>
+</div>
+
+<p-button label="Agregar Usuario" (click)="agregarUsuarios()"></p-button>

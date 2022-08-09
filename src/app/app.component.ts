@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlertaService } from './servicios/alerta.service';
 import { UsuariosService } from './servicios/usuarios.service';
 
 
@@ -9,11 +10,10 @@ import { UsuariosService } from './servicios/usuarios.service';
 })
 export class AppComponent { 
     
-    constructor (private servicioUsuarios:UsuariosService) {}
+    constructor () {}
     
-    usuarios=this.servicioUsuarios.getUsers();
-
+    
     ngOnInit() {
-      console.log(this.usuarios)
+
     }    
 }

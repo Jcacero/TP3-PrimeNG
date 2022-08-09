@@ -11,6 +11,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
+import { AlertaService } from './servicios/alerta.service';
+import { UsuariosService } from './servicios/usuarios.service';
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import { HomeComponent } from './pages/home/home.component';
     PrimeNGModulesModule
   ],
   declarations: [ AppComponent, NavbarComponent, FooterComponent, HeaderComponent, HomeComponent ],
+  providers:[AlertaService,UsuariosService],
   bootstrap:    [ AppComponent ]
 })
 

@@ -11,13 +11,18 @@ export class UsuariosService {
 
   constructor() { 
     this.usuarios = [
-      {nombreUsuario:"Macarena",contraseña:"Maca123"},
-      {nombreUsuario:"Juan",contraseña:"juan123"},
-      {nombreUsuario:"Ramiro",contraseña:"megustaelpalo1212"}
+      {nombreUsuario:"Macarena",contrasena:"Maca123"},
+      {nombreUsuario:"Juan",contrasena:"juan123"},
+      {nombreUsuario:"Ramiro",contrasena:"megustaelpalo1212"},
+      {nombreUsuario:"Teo",contrasena:"Pelado11"}
     ]
   }
 
   getUsers(){
     return this.usuarios;
   }
+  addUsers(usuario:Usuarios){
+    this.usuarios.push(usuario)
+  }
+  
 }

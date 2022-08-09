@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertaService } from 'src/app/servicios/alerta.service';
+import { Usuarios } from 'src/app/models/usuarios';
 import { UsuariosService } from 'src/app/servicios/usuarios.service';
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -8,13 +9,22 @@ import { UsuariosService } from 'src/app/servicios/usuarios.service';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(private servicio2:AlertaService, private servicioUsuarios:UsuariosService) { }
+  usuarios=this.servicioUsuarios.getUsers();
+
+  constructor(private servicioUsuarios:UsuariosService ) { }
 
   ngOnInit(): void {
+
   }
 
-  mostrar(){
-    this.servicio2.mostrarAlerta("estoy siendo llamado desde el appComponent")
+  agregarUsuarios(){
+    let usu: Usuarios
+    let nombre = prompt("Ingrese nombre de usuario") as string
+    let contra = prompt("Ingrese contraseña usuario") as string
+    usu = {nombreUsuario:nombre, contrasena:contra}
+    this.servicioUsuarios.addUsers(usu)
   }
+
+ 
 
 }
