@@ -8,6 +8,7 @@ import { PrimeNGModulesModule } from '../prime-ngmodules/prime-ngmodules.module'
 import { ParallaxComponent } from './parallax/parallax.component';
 import { CardComponent } from './card/card.component';
 import { AdminComponent } from '../pages/admin/admin.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -15,11 +16,13 @@ import { AdminComponent } from '../pages/admin/admin.component';
     ParallaxComponent,
     CardComponent,
     AdminComponent,
+    CarouselComponent,
   ],
   exports: [
     BarraMenuComponent,
     ParallaxComponent,
-    CardComponent
+    CardComponent,
+    CarouselComponent,
   ],
   imports: [
     CommonModule,

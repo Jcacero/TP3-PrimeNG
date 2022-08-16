@@ -7,6 +7,7 @@ import {TabViewModule} from 'primeng/tabview';
 import {CarouselModule} from 'primeng/carousel';
 import {ButtonModule} from 'primeng/button';
 import {CardModule} from 'primeng/card';
+import {InputTextModule} from 'primeng/inputtext';
 
 
 
@@ -18,14 +19,16 @@ import {CardModule} from 'primeng/card';
     TabViewModule,
     CarouselModule,
     CardModule,
-    ButtonModule
+    ButtonModule,
+    InputTextModule
   ],
   exports: [
     MegaMenuModule,
     TabViewModule,
     CarouselModule,
     CardModule,
-    ButtonModule
+    ButtonModule,
+    InputTextModule
   ]
 })
 export class PrimeNGModulesModule { }
