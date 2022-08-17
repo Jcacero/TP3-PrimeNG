@@ -9,6 +9,7 @@ import { ParallaxComponent } from './parallax/parallax.component';
 import { CardComponent } from './card/card.component';
 import { AdminComponent } from '../pages/admin/admin.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { FormularioComponent } from './formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CarouselComponent } from './carousel/carousel.component';
     CardComponent,
     AdminComponent,
     CarouselComponent,
+    FormularioComponent,
   ],
   exports: [
     BarraMenuComponent,

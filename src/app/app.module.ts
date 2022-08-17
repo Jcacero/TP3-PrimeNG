@@ -4,6 +4,7 @@ import {AppRoutingModule} from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentsModulesModule } from './components/components-modules.module';
 import { PrimeNGModulesModule } from './prime-ngmodules/prime-ngmodules.module';
+import { AngularFireModule } from '@angular/fire/compat';
 
 //paginas
 import { AppComponent }   from './app.component';
@@ -13,6 +14,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AlertaService } from './servicios/alerta.service';
 import { UsuariosService } from './servicios/usuarios.service';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
@@ -21,7 +23,8 @@ import { UsuariosService } from './servicios/usuarios.service';
     BrowserAnimationsModule,
     ComponentsModulesModule,
     AppRoutingModule,
-    PrimeNGModulesModule
+    PrimeNGModulesModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   declarations: [ AppComponent, NavbarComponent, FooterComponent, HeaderComponent, HomeComponent ],
   providers:[AlertaService,UsuariosService],
