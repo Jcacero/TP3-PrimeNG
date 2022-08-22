@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { AlertaService } from './servicios/alerta.service';
+import { LibrosService } from './servicios/libros.service';
 import { UsuariosService } from './servicios/usuarios.service';
+import {map} from 'rxjs/operators'
 
 
 @Component({
@@ -10,10 +12,14 @@ import { UsuariosService } from './servicios/usuarios.service';
 })
 export class AppComponent { 
     
-    constructor () {}
+    constructor (private servicioLibros:LibrosService) {}
     
     
     ngOnInit() {
-
+        console.log(this.servicioLibros.obtenerLibros().pipe(map(action=>{
+          action.map(a=>{
+            a.payload.doc.data()
+          })
+        })))
     }    
 }
