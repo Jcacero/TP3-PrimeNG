@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Libro } from 'src/app/models/libro';
 import { AlertaService } from 'src/app/servicios/alerta.service';
+import { LibrosService } from 'src/app/servicios/libros.service';
 
 @Component({
   selector: 'app-home',
@@ -15,9 +17,11 @@ export class HomeComponent implements OnInit {
     "https://www.florespedia.com/Imagenes/flores-bonitas.jpg",
   ]
 
-  constructor(private miServicio:AlertaService) { }
+  libros:Libro[]
+  constructor(private miServicio:AlertaService,private servicioLibros:LibrosService) { }
 
   ngOnInit(): void {
+    this.servicioLibros.obtenerLibros().subscribe(libro=>this.libros=libro)
   }
 
   lanzarDialogo(){

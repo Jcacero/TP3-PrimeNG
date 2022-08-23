@@ -1,11 +1,11 @@
 
-<p-card header="Advanced Card" subheader="Card Subheader" [style]="{width: '360px',margin: '20px'}" styleClass="p-card-shadow">
+<p-card *ngFor="let i of datosCard" header="{{i.titulo}}" subheader="{{i.ISBN}}" [style]="{width: '360px',margin: '20px'}" styleClass="p-card-shadow">
     <ng-template pTemplate="header">
-        <img alt="Card" src="../../../assets/Imagenes/LogoMusica.png">
+        <img alt="Card" src="https://images.cdn3.buscalibre.com/fit-in/360x360/72/0c/720c378e9bfedc6ccd77ecc7c8680c06.jpg">
     </ng-template>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-        quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
+    <p>Este libro describe las magicas aventuras de un principe que viaja en distintos planetas</p>
     <ng-template pTemplate="footer">
-        <p>este es el footer</p>
+        <p>Autor: {{i.autor}}</p>
+        <p>Editorial: {{i.editorial}}</p>
     </ng-template>
 </p-card>

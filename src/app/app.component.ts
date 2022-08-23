@@ -1,8 +1,4 @@
-import { Component } from '@angular/core';
-import { AlertaService } from './servicios/alerta.service';
-import { LibrosService } from './servicios/libros.service';
-import { UsuariosService } from './servicios/usuarios.service';
-import {map} from 'rxjs/operators'
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -10,16 +6,13 @@ import {map} from 'rxjs/operators'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent { 
+export class AppComponent implements OnInit{ 
     
-    constructor (private servicioLibros:LibrosService) {}
+    
+    constructor () {}
     
     
     ngOnInit() {
-        console.log(this.servicioLibros.obtenerLibros().pipe(map(action=>{
-          action.map(a=>{
-            a.payload.doc.data()
-          })
-        })))
+      
     }    
 }
