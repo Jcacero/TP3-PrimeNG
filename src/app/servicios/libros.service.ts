@@ -19,4 +19,20 @@ export class LibrosService {
       map(action=> action.map(a=>a.payload.doc.data()))
     )
   }
+
+   crearLibro(nuevoLibro:Libro){
+    return new Promise(async (resolve,reject)=>{
+      try{
+        const id = this.db.createId();
+        nuevoLibro.id_libro = id ;
+        const resultado= await this.libroCollection.doc(id).set(nuevoLibro);
+        resolve(resultado);
+      }
+      catch(error){
+        reject(error);
+      }
+    })
+  
+ 
+  }
 }
