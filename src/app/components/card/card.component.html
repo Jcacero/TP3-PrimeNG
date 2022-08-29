@@ -7,5 +7,35 @@
     <ng-template pTemplate="footer">
         <p>Autor: {{i.autor}}</p>
         <p>Editorial: {{i.editorial}}</p>
+        <button style="margin-right: 10px;" pButton pRipple type="button" (click)="mostrarEditar(i)" icon="pi pi-check" class="p-button-rounded p-button-outlined"></button>
+        <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger p-button-outlined"></button>
     </ng-template>
 </p-card>
+
+<p-button class="p-button-success" label="Agregar Libro" (click)="mostrarDialogo()" ></p-button>
+
+<p-dialog header="Agregar Libro" [(visible)]="modalVisible">
+    Ingrese la Informacion de nuevo libro
+
+    <form [formGroup]="libro">
+        <span class="p-float-label m-4" >
+            <input type="text" pInputText formControlName="titulo">
+            <label for="float-input">Titulo</label>
+        </span>
+        <span class="p-float-label m-4">
+            <input type="text" pInputText formControlName="autor">
+            <label for="float-input">Autor</label>
+        </span>
+        <span class="p-float-label m-4" >
+            <input type="text" pInputText formControlName="editorial">
+            <label for="float-input">Editorial</label>
+        </span>
+        <span class="p-float-label m-4" >
+            <input type="number" pInputText formControlName="ISBN">
+            <label for="float-input">ISBN</label>
+        </span>
+
+        <p-button class="p-button-success" label="{{textoBoton}}" (click)="agregarLibro()" ></p-button>
+    </form>
+    
+</p-dialog>

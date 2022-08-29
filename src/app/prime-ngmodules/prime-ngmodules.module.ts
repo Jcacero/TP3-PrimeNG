@@ -11,6 +11,7 @@ import {CardModule} from 'primeng/card';
 import {InputTextModule} from 'primeng/inputtext';
 import {DialogModule} from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -25,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ButtonModule,
     InputTextModule,
     DialogModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
   ],
   exports: [
@@ -35,6 +37,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ButtonModule,
     InputTextModule,
     DialogModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule
   ]
 })

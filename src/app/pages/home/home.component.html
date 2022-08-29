@@ -4,28 +4,4 @@
 
 <app-card [datosCard]="libros"></app-card>   
 
-<p-button class="p-button-success" label="Agregar Libro" (click)="mostrarDialogo()" ></p-button>
 
-<p-dialog header="Agregar Libro" [(visible)]="modalVisible">
-    Ingrese la Informacion de nuevo libro
-
-    <form formGroup="libro">
-        <span class="p-float-label m-4" >
-            <input type="text" pInputText formControlName="titulo">
-            <label for="float-input">Titulo</label>
-        </span>
-        <span class="p-float-label m-4" formControlName="autor">
-            <input type="text" pInputText>
-            <label for="float-input">Autor</label>
-        </span>
-        <span class="p-float-label m-4" >
-            <input type="text" pInputText formControlName="editorial">
-            <label for="float-input">Editorial</label>
-        </span>
-        <span class="p-float-label m-4" >
-            <input type="number" pInputText formControlName="ISBN">
-            <label for="float-input">ISBN</label>
-        </span>
-    </form>
-    
-</p-dialog>

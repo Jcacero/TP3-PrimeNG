@@ -32,7 +32,9 @@ export class LibrosService {
         reject(error);
       }
     })
-  
- 
+    }
+
+  modificarLibro(id_libro:string,nuevaData:Libro,){
+     return this.db.collection('libros').doc(id_libro).update(nuevaData)
   }
 }
