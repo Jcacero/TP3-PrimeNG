@@ -37,4 +37,16 @@ export class LibrosService {
   modificarLibro(id_libro:string,nuevaData:Libro,){
      return this.db.collection('libros').doc(id_libro).update(nuevaData)
   }
+
+  eliminarLibro(id_libro:string){
+    return new Promise((resolve, reject) => {
+      try{
+          const resp= this.libroCollection.doc(id_libro).delete()
+          resolve(resolve)
+      }
+      catch(error){ 
+        reject(error)
+      }
+    })
+  }
 }

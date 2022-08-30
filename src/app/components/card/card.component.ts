@@ -20,6 +20,8 @@ export class CardComponent implements OnInit {
 
   textoBoton:string;
   libroSeleccionado:Libro;
+  eliminarVisible:boolean=false;
+
   libro=new FormGroup({
     titulo:new FormControl('',Validators.required),
     autor:new FormControl('',Validators.required),
@@ -54,8 +56,18 @@ export class CardComponent implements OnInit {
   }
 
   editarLibro(){
-    this.servicioLibros.modificarLibro(this.libroSeleccionado.id_libro,this.libroSeleccionado).then(m=>{
-      alert("funcionaa")
+    let datos:Libro ={
+      titulo:this.libro.value.titulo!,
+      autor:this.libro.value.autor!,
+      editorial:this.libro.value.editorial!,
+      ISBN:this.libro.value.ISBN,
+      id_libro:this.libroSeleccionado.id_libro
+    }
+    this.servicioLibros.modificarLibro(this.libroSeleccionado.id_libro,datos).then(libro=>{
+      alert("El libro fue modificado con exito")
+    })
+    .catch((error)=>{
+      alert("No se pudo modificar el libro \n Error:"+error)
     })
   }
 
@@ -74,7 +86,6 @@ export class CardComponent implements OnInit {
       ISBN:libroSeleccionado.ISBN,
     })
   }
-
   cargarDatos(){
     if(this.textoBoton==="Agregar Libro"){
       this.agregarLibro()
@@ -82,6 +93,22 @@ export class CardComponent implements OnInit {
     else if (this.textoBoton==="Editar Libro"){
       this.editarLibro()
     }
+    this.modalVisible = false;
+    this.libro.reset();
+  }
+
+  mostrarEliminar(libroSeleccionado:Libro){
+    this.libroSeleccionado = libroSeleccionado
+    this.eliminarVisible = true;
+  }
+  borrarLibro(){
+    this.servicioLibros.eliminarLibro(this.libroSeleccionado.id_libro).then((resp)=>{
+      alert("El libro fue eliminado con éxito")
+    })
+    .catch((error)=>{
+      alert("El libro no pudo ser eliminado \n Error:"+error)
+    })
+    this.eliminarVisible = false
   }
 
 }
