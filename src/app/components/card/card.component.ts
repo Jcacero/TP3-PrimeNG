@@ -21,6 +21,7 @@ export class CardComponent implements OnInit {
   textoBoton:string;
   libroSeleccionado:Libro;
   eliminarVisible:boolean=false;
+  imagen:string;
 
   libro=new FormGroup({
     titulo:new FormControl('',Validators.required),
@@ -109,6 +110,20 @@ export class CardComponent implements OnInit {
       alert("El libro no pudo ser eliminado \n Error:"+error)
     })
     this.eliminarVisible = false
+  }
+
+  cargarImagen(event:any){
+    let archivo=event.target.files[0];
+    let  reader=new FileReader();
+    if(archivo!=undefined){
+      reader.readAsDataURL(archivo)
+      reader.onloadend = () =>{
+        let url = reader.result
+        if(url!=null){
+          this.imagen=url.toString()
+        }
+      }
+    }
   }
 
 }
