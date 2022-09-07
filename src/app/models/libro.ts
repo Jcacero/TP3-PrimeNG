@@ -3,6 +3,7 @@ export interface Libro {
     autor:string,
     editorial:string,
     ISBN:number,
+    img:string,
     id_libro:string,
 }
 

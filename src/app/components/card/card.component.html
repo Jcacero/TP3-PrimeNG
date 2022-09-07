@@ -2,20 +2,23 @@
 
 <p-button class="p-button-success" label="Agregar Libro" (click)="mostrarDialogo()" ></p-button>
 
-<p-card *ngFor="let i of datosCard" header="{{i.titulo}}" subheader="{{i.ISBN}}" [style]="{width: '360px',margin: '20px'}" styleClass="p-card-shadow">
-    <ng-template pTemplate="header">
-        <img alt="Card" src="https://images.cdn3.buscalibre.com/fit-in/360x360/72/0c/720c378e9bfedc6ccd77ecc7c8680c06.jpg">
-    </ng-template>
-    <p>Este libro describe las magicas aventuras de un principe que viaja en distintos planetas</p>
-    <ng-template pTemplate="footer">
-        <p><b>Autor:</b> {{i.autor}}</p>
-        <p><b>Editorial:</b> {{i.editorial}}</p>
-        <div style="margin-top: 10px;">
-            <button style="margin-right:10px;" pButton pRipple type="button" (click)="mostrarEditar(i)" icon="pi pi-pencil" class="p-button-rounded p-button-outlined"></button>
-            <button pButton pRipple type="button" (click)="mostrarEliminar(i)" icon="pi pi-trash" class="p-button-rounded p-button-danger p-button-outlined"></button>
-        </div>
-    </ng-template>
-</p-card>
+
+    <p-card *ngFor="let i of datosCard" [style]="{width: '360px',margin: '20px'}" styleClass="p-card-shadow">
+        <h3>{{i.titulo}}</h3>
+        <p>{{i.ISBN}}</p>
+        <ng-template pTemplate="header">
+            <img alt="Card" src="{{i.img}}">
+        </ng-template>
+        <p>Este libro describe las magicas aventuras de un principe que viaja en distintos planetas</p>
+        <ng-template pTemplate="footer">
+            <p><b>Autor:</b> {{i.autor}}</p>
+            <p><b>Editorial:</b> {{i.editorial}}</p>
+            <div style="margin-top: 10px;">
+                <button style="margin-right:10px;" pButton pRipple type="button" (click)="mostrarEditar(i)" icon="pi pi-pencil" class="p-button-rounded p-button-outlined"></button>
+                <button pButton pRipple type="button" (click)="mostrarEliminar(i)" icon="pi pi-trash" class="p-button-rounded p-button-danger p-button-outlined"></button>
+            </div>
+        </ng-template>
+    </p-card>
 
 <p-dialog header="{{textoBoton}}" [(visible)]="modalVisible">
     Ingrese la Informacion del nuevo libro

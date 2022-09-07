@@ -2,3 +2,23 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+p-card{
+    width: 30%;
+    display: inline-block;
+}
+
+img{
+    width: 100%;
+    height: 350px;
+}
+
+h3{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+p-button{
+    display: block;
+}

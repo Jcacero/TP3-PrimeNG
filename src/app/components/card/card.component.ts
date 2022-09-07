@@ -28,6 +28,7 @@ export class CardComponent implements OnInit {
     autor:new FormControl('',Validators.required),
     editorial:new FormControl('',Validators.required),
     ISBN:new FormControl(0,Validators.required),
+    img : new FormControl("",Validators.required)
   })
 
   modalVisible:boolean=false;
@@ -38,6 +39,7 @@ export class CardComponent implements OnInit {
         titulo:this.libro.value.titulo!,
         autor:this.libro.value.autor!,
         editorial:this.libro.value.editorial!,
+        img:this.libro.value.img!,
         ISBN:this.libro.value.ISBN,
         id_libro:""
       }
@@ -61,6 +63,7 @@ export class CardComponent implements OnInit {
       titulo:this.libro.value.titulo!,
       autor:this.libro.value.autor!,
       editorial:this.libro.value.editorial!,
+      img:this.libro.value.img!,
       ISBN:this.libro.value.ISBN,
       id_libro:this.libroSeleccionado.id_libro
     }
@@ -85,6 +88,7 @@ export class CardComponent implements OnInit {
       autor:libroSeleccionado.autor,
       editorial:libroSeleccionado.editorial,
       ISBN:libroSeleccionado.ISBN,
+      img:libroSeleccionado.img
     })
   }
   cargarDatos(){
