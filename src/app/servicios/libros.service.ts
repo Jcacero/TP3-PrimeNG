@@ -20,11 +20,12 @@ export class LibrosService {
     )
   }
 
-   crearLibro(nuevoLibro:Libro){
+   crearLibro(nuevoLibro:Libro, url:string){
     return new Promise(async (resolve,reject)=>{
       try{
         const id = this.db.createId();
         nuevoLibro.id_libro = id ;
+        nuevoLibro.img=url
         const resultado= await this.libroCollection.doc(id).set(nuevoLibro);
         resolve(resultado);
       }

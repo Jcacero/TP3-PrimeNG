@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {getStorage, ref,UploadResult, uploadString} from 'firebase/storage';
+import {getDownloadURL, getStorage, ref,UploadResult, uploadString} from 'firebase/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -18,11 +18,18 @@ export class StorageService {
       .then(resp=>{
         return resp
       })
+      return this.respuesta
     }
     catch(error){
       console.log(error)
       return this.respuesta
     }
   }
+
+
+  obtenerUrlImagen(respuesta:UploadResult){
+    return getDownloadURL(respuesta.ref)
+  }
+
   
 }

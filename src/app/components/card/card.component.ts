@@ -1,6 +1,7 @@
 import { Component, Input, OnInit} from '@angular/core';
 import { Libro } from 'src/app/models/libro';
 import { LibrosService } from 'src/app/servicios/libros.service';
+import { StorageService } from 'src/app/servicios/storage.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -12,7 +13,7 @@ export class CardComponent implements OnInit {
 
   @Input() datosCard: Libro[]
 
-  constructor(private servicioLibros:LibrosService) { }
+  constructor(private servicioLibros:LibrosService, private servicioStorage: StorageService) { }
 
   ngOnInit(): void {
     
@@ -22,13 +23,13 @@ export class CardComponent implements OnInit {
   libroSeleccionado:Libro;
   eliminarVisible:boolean=false;
   imagen:string;
+  nombreImagen:string;
 
   libro=new FormGroup({
     titulo:new FormControl('',Validators.required),
     autor:new FormControl('',Validators.required),
     editorial:new FormControl('',Validators.required),
     ISBN:new FormControl(0,Validators.required),
-    img : new FormControl("",Validators.required)
   })
 
   modalVisible:boolean=false;
@@ -39,19 +40,27 @@ export class CardComponent implements OnInit {
         titulo:this.libro.value.titulo!,
         autor:this.libro.value.autor!,
         editorial:this.libro.value.editorial!,
-        img:this.libro.value.img!,
+        img:"",
         ISBN:this.libro.value.ISBN,
         id_libro:""
       }
 
-      
-
-      this.servicioLibros.crearLibro(nuevoLibro).then((libro)=>{
-        alert("El libro fue agregado con éxito");
-      })
-      .catch((error)=>{
-        alert("El libro no pudo ser cargado\n Error:"+error);
-      })
+      this.servicioStorage.subirImagen(this.nombreImagen,this.imagen)
+      .then(
+        async res=>{
+          this.servicioStorage.obtenerUrlImagen(res).
+          then(
+            async url=>{
+              await this.servicioLibros.crearLibro(nuevoLibro,url).then((libro)=>{
+                alert("El libro fue agregado con éxito");
+              })
+              .catch((error)=>{
+                alert("El libro no pudo ser cargado\n Error:"+error);
+              })
+            }
+          )
+        }
+      )
     }
     else{
       alert("El formulario no está comlpeto")
@@ -124,10 +133,13 @@ export class CardComponent implements OnInit {
       reader.onloadend = () =>{
         let url = reader.result
         if(url!=null){
+          this.nombreImagen = archivo.name
           this.imagen=url.toString()
         }
       }
     }
   }
+
+
 
 }
