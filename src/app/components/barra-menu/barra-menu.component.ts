@@ -37,7 +37,7 @@ export class BarraMenuComponent implements OnInit {
         },
         {
             label: 'Admin', icon: 'pi pi-fw pi-users',
-            visible:this.adminVisible,
+            //visible:this.adminVisible,
             routerLink:"admin"
         },
     ]

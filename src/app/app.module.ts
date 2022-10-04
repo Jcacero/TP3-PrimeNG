@@ -15,7 +15,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AlertaService } from './servicios/alerta.service';
 import { UsuariosService } from './servicios/usuarios.service';
 import { environment } from 'src/environments/environment';
-import { PruebaGuardGuard } from './prueba-guard.guard';
+import { PruebaGuardGuard } from './servicios/prueba-guard.guard';
 
 
 @NgModule({
