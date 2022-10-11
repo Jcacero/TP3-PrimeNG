@@ -10,6 +10,7 @@ import { CardComponent } from './card/card.component';
 import { AdminComponent } from '../pages/admin/admin.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { FormularioComponent } from './formulario/formulario.component';
+import { AutocompletarComponent } from './autocompletar/autocompletar.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,14 @@ import { FormularioComponent } from './formulario/formulario.component';
     AdminComponent,
     CarouselComponent,
     FormularioComponent,
+    AutocompletarComponent,
   ],
   exports: [
     BarraMenuComponent,
     ParallaxComponent,
     CardComponent,
     CarouselComponent,
+    AutocompletarComponent
   ],
   imports: [
     CommonModule,

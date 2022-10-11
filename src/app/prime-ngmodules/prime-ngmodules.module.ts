@@ -11,7 +11,8 @@ import {CardModule} from 'primeng/card';
 import {InputTextModule} from 'primeng/inputtext';
 import {DialogModule} from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 
 
 
@@ -27,6 +28,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     InputTextModule,
     DialogModule,
     ReactiveFormsModule,
+    FormsModule,
+    AutoCompleteModule,
     BrowserAnimationsModule,
   ],
   exports: [
@@ -38,6 +41,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     InputTextModule,
     DialogModule,
     ReactiveFormsModule,
+    FormsModule,
+    AutoCompleteModule,
     BrowserAnimationsModule
   ]
 })
