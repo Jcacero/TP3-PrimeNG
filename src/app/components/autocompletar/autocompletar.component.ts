@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Query } from '@angular/core';
 
 @Component({
   selector: 'app-autocompletar',
@@ -23,7 +23,7 @@ export class AutocompletarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  filterCountry(event:    ) {
+  filterCountry(event: { query: any; }) {
     //in a real application, make a request to a remote url with the query and return filtered results, for demo we filter at client side
     let filtered: any[] = [];
     let query = event.query;
