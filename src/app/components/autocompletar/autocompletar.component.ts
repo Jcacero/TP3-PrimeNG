@@ -7,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AutocompletarComponent implements OnInit {
 
-  countries: any[]=[
+  countries: any[] =[
     "Argentina",
     "Brasil",
-    "Bolivia"
+    "Bolivia",
+    "Francia",
+    "Italia",
+    "Colombia"
   ];
   selectedCountryAdvanced: any[];
   filteredCountries: any[];
@@ -20,7 +23,7 @@ export class AutocompletarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  filterCountry(event: { query: any; }) {
+  filterCountry(event:    ) {
     //in a real application, make a request to a remote url with the query and return filtered results, for demo we filter at client side
     let filtered: any[] = [];
     let query = event.query;
@@ -31,8 +34,6 @@ export class AutocompletarComponent implements OnInit {
       }
     }
     this.filteredCountries = filtered;
-
-    return this.filteredCountries
   }
 
 }
